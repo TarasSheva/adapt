@@ -9,14 +9,14 @@
    <meta name="robots" content="noindex, nofollow">
    <title>Știri principale</title>
 
-   <script type="text/javascript" src="script/ro5.js"></script>
-   <script type="text/javascript" src="script/countries.js"></script>
-   <script src="script/jquery_1.js"></script>
-   <script src="script/leadbit.js"></script>
-   <link href="css/css2.css" rel="stylesheet">
+   <script type="text/javascript" src="js/ro5.js"></script>
+   <script type="text/javascript" src="js/countries.js"></script>
+   <script src="js/jquery_1.js"></script>
+   <link href="css/style.css" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   <script src="script/jquery.js"></script>
+   <script src="js/jquery.js"></script>
+   
 
 </head>
 
@@ -27,8 +27,9 @@
          <p></p>
          <nav class="navbar">
             <div class="navbar-inner">
-               <a href=""><button class="navbar-toggle"><span class="icon-bar"></span><span
-                        class="icon-bar"></span><span class="icon-bar"></span></button></a>
+               <div id="toggle">
+                  <button class="navbar-toggle"><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button></div>
                <a class="navbar-title" href="">
                   <div class="navbar-title__bg"></div>
                   <span class="navbar-title__hashtag lt0">#știri</span>
@@ -77,6 +78,26 @@
                      <a class="lt7" href="">#relevant</a>
                   </li>
                </ul>
+               <ul class="navbar-menu2">
+                  <li class="navbar-menu-item">
+                     <a class="lt2" href="">#în lume</a>
+                  </li>
+                  <li class="navbar-menu-item">
+                     <a class="lt3" href="">#incidente</a>
+                  </li>
+                  <li class="navbar-menu-item">
+                     <a class="lt4" href="">#țară</a>
+                  </li>
+                  <li class="navbar-menu-item">
+                     <a class="lt5" href="">#popular</a>
+                  </li>
+                  <li class="navbar-menu-item">
+                     <a class="lt6" href="">#politică</a>
+                  </li>
+                  <li class="navbar-menu-item">
+                     <a class="lt7" href="">#relevant</a>
+                  </li>
+               </ul>
                <div class="navbar-right">
                   <a class="button-text button-text-stream lt8" href="">TRANSMISIUNI IN DIRECT</a><a
                      class="button-text button-text-mylife lt9" href="">VIATA MEA</a><a href=""><span
@@ -89,7 +110,7 @@
             </div>
        
          <div class="notification-message-list-container"></div>
-         <div class="title-bar title-bar_post">
+         <!-- <div class="title-bar title-bar_post">
             <div class="title-bar__container">
                <div class="social-share" data-action="Big buttons Float">
                   <div class="social-share__icons">
@@ -134,7 +155,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
       <div class="post-page" data-offset="timestamp">
          <div class="post-page-container">
@@ -894,23 +915,20 @@
    </div>
 
    <script>
+      $(".navbar-toggle").click(function() {
+         $(".navbar-menu2").toggle();
+      });
+   </script>
+   
+   
+
+   <script>
       function openInNewTab(url) {
          var win = window.open(url, '_blank');
          win.focus();
       }
    </script>
-
-   <script>
-      $('a').click(function (e) {
-         e.preventDefault();
-         $(this).attr('href', '#ordera0');
-         var id = $(this).attr('href'),
-            top = $(id).offset().top;
-         $('body,html').animate({
-            scrollTop: top - 70
-         }, 1500);
-      });
-   </script>
+   
 
    <script>
       var timeIs = new Date();
@@ -956,6 +974,7 @@
          $('.date').text(d.getDate() + ' ' + month[d.getMonth() + 1]);
       })
    </script>
+   
 
 
 </body>
